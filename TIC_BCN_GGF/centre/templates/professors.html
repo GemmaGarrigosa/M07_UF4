@@ -1,5 +1,28 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1> Estàs a professors </h1>
+    <h1> INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+
+<table>
+        <tr>
+            <td>NOM</td>
+            <td>COGNOM1</td>
+            <td>COGNOM2</td>
+            <td>CORREU</td>
+            <td>CURS</td>
+            <td>TUTOR</td>
+            <td>MODUL</td>
+        </tr>
+        {% for professor in professors %} <!-- fem un bucle for per a que es vegin tots els professors-->
+        <tr>
+            <td>{{ professor.nom }}</td>
+            <td>{{ professor.cognom1 }}</td>
+            <td>{{ professor.cognom2 }}</td>
+            <td>{{ professor.correu }}</td>
+            <td>{{ professor.curs }}</td>
+            <td>{{ professor.tutor }}</td>
+            <td>{{ professor.moduls }}</td>
+        </tr>
+        {% endfor %}
+</table>
 
 {% endblock %}
