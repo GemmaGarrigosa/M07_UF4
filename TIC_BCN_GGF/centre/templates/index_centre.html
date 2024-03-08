@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index template</title>
-</head>
-<body>
+{% extends 'index.html' %}
+{% block content %}
     <h1> Primer  - app Prova </h1>
     <p> Benvinguts a la primera app Prova! </p>
-</body>
-</html>
+    <p> Dades Professor:</p>
+    <div>
+        <label> Nom:</label> {{ name }}
+    </div>
+    <div>
+        <label> Cognom:</label> {{ surname }}
+    </div>
+    <div>
+        <label> Edat:</label> {{ age }}
+    </div>
+{% endblock %}
