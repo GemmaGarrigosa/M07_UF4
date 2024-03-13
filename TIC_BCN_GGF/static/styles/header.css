@@ -1,4 +1,10 @@
 #headerWeb{
     background-color: rgb(127, 255, 212);
-    padding: 25px;
+    padding: 15px;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

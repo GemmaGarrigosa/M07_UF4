@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1> INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+    <h1> INFORMACIÓ DE L'ALUMNE {{ student.nom }}</h1>
 
     <table>
         <tr>
@@ -10,15 +10,15 @@
             <td>CORREU</td>
             <td>CURS</td>
             <td>MODUL</td>
-        </tr> <!-- fem un bucle for per a que es vegin tots els estudiants-->
-        {% for student in students %}
+        </tr>
         <tr>
             <td>{{ student.nom }}</td>
             <td>{{ student.cognom1 }}</td>
             <td>{{ student.cognom2 }}</td>
-            <a href="{%%}"> + INFO</a>
+            <td>{{ student.correu }}</td>
+            <td>{{ student.curs }}</td>
+            <td>{{ student.moduls }}</td>
         </tr>
-        {% endfor %}
     </table>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1> INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+    <h1> INFORMACIÓ DEL PROFESSOR {{ professor.nom }}</h1>
 
 <table>
         <tr>
@@ -12,14 +12,15 @@
             <td>TUTOR</td>
             <td>MODUL</td>
         </tr>
-        {% for professor in professors %} <!-- fem un bucle for per a que es vegin tots els professors-->
         <tr>
             <td>{{ professor.nom }}</td>
             <td>{{ professor.cognom1 }}</td>
             <td>{{ professor.cognom2 }}</td>
-            <a href="{%%}"> + INFO</a>
+            <td>{{ professor.correu }}</td>
+            <td>{{ professor.curs }}</td>
+            <td>{{ professor.tutor }}</td>
+            <td>{{ professor.moduls }}</td>
         </tr>
-        {% endfor %}
 </table>
 
 {% endblock %}

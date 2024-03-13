@@ -46,7 +46,11 @@ def professor(request, pk):
       {"id": 3, "nom": "Josep Oriol", "cognom1": "Roca", "cognom2": "Fabra", "correu": "joseporiol.roca@iticbcn.cat","tutor": "NO", "curs": "DAW2A", "moduls": "M09"},
       {"id": 4, "nom": "Xavi", "cognom1": "Quesada", "cognom2": "Puertas", "correu": "xavi.quesada@iticbcn.cat","tutor": "NO", "curs": "DAW2A", "moduls": "M08/M013"},
    ]
-   return render(request, 'professors.html',{"professor":profes})
+   profes_Obj = None
+   for i in profes :
+      if i['id']==pk:
+         profes_Obj = i
+   return render(request, 'professor.html',{"professor":profes_Obj})
 def student (request, pk):
    estudiants = [  # Guardem en un array la llista d'alumnes
       {"id": 1, "nom": "Gemma", "cognom1": "Garrigosa", "cognom2": "Francés","correu": "2023_gemma.garrigosa@iticbcn.cat", "curs": "DAW2A", "moduls": "M07"},
@@ -66,4 +70,8 @@ def student (request, pk):
       {"id": 15, "nom": "Jianjing", "cognom1": "Niu", "cognom2": "", "correu": "2023_jianjing.niu@iticbcn.cat","curs": "DAW2A", "moduls": "M07"},
       {"id": 16, "nom": "Neus", "cognom1": "Bravo", "cognom2": "Arias", "correu": "2023_neus.bravo@iticbcn.cat","curs": "DAW2A", "moduls": "M07"},
    ]
-   return render(request, 'students.html',{"student":estudiants})
+   students_Obj = None
+   for i in estudiants:
+      if i['id']== pk:
+         students_Obj = i
+   return render(request, 'student.html',{"student":students_Obj})

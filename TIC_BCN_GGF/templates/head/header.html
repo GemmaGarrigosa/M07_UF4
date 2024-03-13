@@ -6,7 +6,10 @@
 </html>
 {% block content %}
     <div id="headerWeb">
-        <h2> Aquest és el navbar</h2>
+        <ul>
+            <li><a href="{% url 'students' %}">ESTUDIANTS</a></li>
+            <li><a href="{% url 'professors' %}"> PROFESSORS</a></li>
+        </ul>
     </div>
 
 {% endblock %}
