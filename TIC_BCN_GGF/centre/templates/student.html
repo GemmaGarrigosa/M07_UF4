@@ -1,24 +1,25 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1> INFORMACIÓ DE L'ALUMNE {{ student.nom }}</h1>
-
-    <table>
-        <tr>
-            <td>NOM</td>
-            <td>COGNOM1</td>
-            <td>COGNOM2</td>
-            <td>CORREU</td>
-            <td>CURS</td>
-            <td>MODUL</td>
-        </tr>
-        <tr>
-            <td>{{ student.nom }}</td>
-            <td>{{ student.cognom1 }}</td>
-            <td>{{ student.cognom2 }}</td>
-            <td>{{ student.correu }}</td>
-            <td>{{ student.curs }}</td>
-            <td>{{ student.moduls }}</td>
-        </tr>
-    </table>
-
+    <h1> INFORMACIÓ DE L'ALUMNE: {{ student.nom }}</h1>
+    <div>
+        <table>
+            <tr>
+                <th>NOM</th>
+                <th>COGNOM1</th>
+                <th>COGNOM2</th>
+                <th>CORREU</th>
+                <th>CURS</th>
+                <th>MODUL</th>
+            </tr>
+            <tr>
+                <td>{{ student.nom }}</td>
+                <td>{{ student.cognom1 }}</td>
+                <td>{{ student.cognom2 }}</td>
+                <td>{{ student.correu }}</td>
+                <td>{{ student.curs }}</td>
+                <td>{{ student.moduls }}</td>
+            </tr>
+        </table>
+    </div>
+<button><a href="{% url 'students' %}">TORNA ENRERE</a></button>
 {% endblock %}

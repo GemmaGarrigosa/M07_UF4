@@ -4,20 +4,18 @@
 
 <table>
         <tr>
-            <td>NOM</td>
-            <td>COGNOM1</td>
-            <td>COGNOM2</td>
-            <td>CORREU</td>
-            <td>CURS</td>
-            <td>TUTOR</td>
-            <td>MODUL</td>
+            <th>NOM</th>
+            <th>COGNOM1</th>
+            <th>COGNOM2</th>
+            <th></th>
+
         </tr>
         {% for professor in professors %} <!-- fem un bucle for per a que es vegin tots els professors-->
         <tr>
             <td>{{ professor.nom }}</td>
             <td>{{ professor.cognom1 }}</td>
             <td>{{ professor.cognom2 }}</td>
-            <a href="{%%}"> + INFO</a>
+            <td><a href="{% url 'professor' professor.id %}"> + INFO</a></td>
         </tr>
         {% endfor %}
 </table>
