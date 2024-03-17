@@ -75,11 +75,15 @@ WSGI_APPLICATION = 'TIC_BCN_GGF.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+#aqui configurem la BBDD
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "M07",
+        "USER": "gemma",
+        "PASSWORD": "system",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
