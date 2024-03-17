@@ -1,8 +1,8 @@
-# Practica 1
+# Practica 2
 
-# PART 1
-![viewProfessors](professorsview.png)
-![viewStudents](studentsview.png)
 
-# PART 2
-[Link del video](PracticaDjango1.webm)
+![comanda](migraciocentres.png)
+![resultat](resultat.png)
+
+# VIDEO
+[Link del video](migraciouf4.webm)
