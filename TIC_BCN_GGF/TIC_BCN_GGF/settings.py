@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'TIC_BCN_GGF.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "M07",
-        "USER": "gemma",
-        "PASSWORD": "system",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        'NAME': 'ITIC_DB',
+        'USER': 'gemma',
+        'PASSWORD': 'system',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
