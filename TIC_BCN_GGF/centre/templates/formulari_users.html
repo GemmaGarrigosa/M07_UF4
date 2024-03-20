@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1> FORMULARI </h1>
+<form action="" method="POST">
+    {% csrf_token %} <!-- Middleware que si no el fem servir no ens funcionarà el formulari -->
+    {{form.as_p}}
+    <input type="submit">
+</form>
+{% endblock %}

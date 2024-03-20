@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.template import loader, Context
 from django.http import HttpResponse
+from .forms import UserForm
 # Create your views here.
 def index(request):
    professor = {"name":"Roger","surname":"Sobrino","age":"17"}
@@ -75,3 +76,8 @@ def student (request, pk):
       if i['id']== pk:
          students_Obj = i
    return render(request, 'student.html',{"student":students_Obj})
+
+def form_user(request):
+   form = UserForm()
+   context = {'form':form}
+   return render(request, 'formulari_users.html',context)
