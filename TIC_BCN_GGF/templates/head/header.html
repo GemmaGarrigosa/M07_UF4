@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}">
+</head>
+</html>
+{% block content %}
+    <div id="headerWeb">
+        <ul>
+            <li><a href="{% url 'students' %}">ESTUDIANTS</a></li>
+            <li><a href="{% url 'professors' %}"> PROFESSORS</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

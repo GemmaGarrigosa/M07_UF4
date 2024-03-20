@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1> INFORMACIÓ ALUMNAT TIC BARCELONA</h1>
+
+    <table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM1</th>
+            <th>COGNOM2</th>
+            <th></th>
+
+        </tr> <!-- fem un bucle for per a que es vegin tots els estudiants-->
+        {% for student in students %}
+        <tr>
+            <td>{{ student.nom }}</td>
+            <td>{{ student.cognom1 }}</td>
+            <td>{{ student.cognom2 }}</td>
+            <td><a href="{% url 'student' student.id%}"> + INFO</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

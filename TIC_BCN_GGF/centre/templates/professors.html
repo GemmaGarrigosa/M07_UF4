@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1> INFORMACIÓ PROFESSORAT TIC BARCELONA</h1>
+
+<table>
+        <tr>
+            <th>NOM</th>
+            <th>COGNOM1</th>
+            <th>COGNOM2</th>
+            <th></th>
+
+        </tr>
+        {% for professor in professors %} <!-- fem un bucle for per a que es vegin tots els professors-->
+        <tr>
+            <td>{{ professor.nom }}</td>
+            <td>{{ professor.cognom1 }}</td>
+            <td>{{ professor.cognom2 }}</td>
+            <td><a href="{% url 'professor' professor.id %}"> + INFO</a></td>
+        </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}
