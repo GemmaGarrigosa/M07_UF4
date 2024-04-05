@@ -6,6 +6,7 @@ from django.db import models
 
 class User(models.Model):
 
+
     ROLS = [ #Creo una tupla amb clau valor per als dos tipus de rols que existeixen
         ('Alumnat','Alumnat'),
         ('Professorat','Professorat')
