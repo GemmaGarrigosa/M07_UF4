@@ -23,23 +23,50 @@ def professors(request):
    return render(request,'professors.html',{"professors":profes})
 
 def professor(request, pk):
-   profes = User.objects.get(attribute=pk)
-   profes_Obj = None
-   for i in profes :
-      if i['id']==pk:
-         profes_Obj = i
-   return render(request, 'professor.html',{"professor":profes_Obj})
+   profes = User.objects.get(id=pk)
+
+   return render(request, 'professor.html',{"professor":profes})
 def student (request, pk):
-   estudiants = User.objects.all() #esta malament aixo
-   students_Obj = None
-   for i in estudiants:
-      if i['id']== pk:
-         students_Obj = i
-   return render(request, 'student.html',{"student":students_Obj})
+   estudiants = User.objects.get(id=pk) #esta malament aixo
+
+   return render(request, 'student.html',{"student":estudiants})
+
 
 def form_user(request):
    form = UserForm()
+   if request.method == 'POST':
+      form = UserForm(request.POST)
+      if form.is_valid():
+         form.save()
+         if form["rol"].value() == "Alumnat":
+            return redirect('students')
+         else:
+            return redirect('professors')
+   context = {'form': form}
+   return render(request, 'formulari_users.html', context)
+
+def delete_user(request,pk):
+   form = User.objects.get(id=pk)
+   if request.method == 'POST':
+      form.delete()
+      if form["rol"].value() == "Alumnat":
+         return redirect('students')
+      else:
+         return redirect('professors')
    context = {'form':form}
-   return render(request, 'formulari_users.html',context)
+   return render(request,'delete_users.html',context)
 
+def update_user(request,pk):
+   user = User.objects.get(id=pk)
+   form = UserForm(instance=user)
 
+   if request.method == 'POST':
+      form = UserForm(request.POST, instance=user)
+      if form.is_valid():
+         form.save()
+         if form["rol"].value() == "Alumnat":
+            return redirect('students')
+         else:
+            return redirect('professors')
+   context = {'form':form}
+   return render(request,'formulari_users.html',context)
