@@ -37,11 +37,15 @@ DETAILS
 ![details](vistaDetailsProfessorat.png)
 
 <h2>CRUD ALUMNAT</h2>
-
+CREATE
 ![create](vistaCreateAlumnat.png)
+READ
 ![read](vistaAlumnat.png)
+UPDATE
 ![update](vistaUpdateAlumnat.png)
+DELETE
 ![delete](vistaDeleteAlumnat.png)
+DETAILS
 ![details](vistaDetailsAlumnat.png)
 
 <h2> VIDEO PRACTICA 4 </h2>
