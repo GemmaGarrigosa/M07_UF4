@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1> ELIMINAR USUARI</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p> Segur que vols eliminar a "{{ form.nom}} ?"</p>
+        <button><a href="{% url 'index' %}">TORNAR</a></button>
+        <input type="submit" value="CONFIRM"/>
+    </form>
+
+{% endblock %}

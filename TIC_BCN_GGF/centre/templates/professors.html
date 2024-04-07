@@ -16,6 +16,8 @@
             <td>{{ professor.cognom1 }}</td>
             <td>{{ professor.cognom2 }}</td>
             <td><a href="{% url 'professor' professor.id %}"> + INFO</a></td>
+            <td><a href="{% url 'editar_usuari' professor.id %}"> EDITAR</a></td>
+            <td><a href="{% url 'eliminar_usuari' professor.id %}"> ELIMINAR</a></td>
         </tr>
         {% endfor %}
 </table>
