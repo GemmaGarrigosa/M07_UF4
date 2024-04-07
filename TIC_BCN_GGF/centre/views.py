@@ -49,7 +49,7 @@ def delete_user(request,pk):
    form = User.objects.get(id=pk)
    if request.method == 'POST':
       form.delete()
-      if form["rol"].value() == "Alumnat":
+      if form.rol == "Alumnat":
          return redirect('students')
       else:
          return redirect('professors')
