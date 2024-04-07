@@ -16,6 +16,8 @@
             <td>{{ student.cognom1 }}</td>
             <td>{{ student.cognom2 }}</td>
             <td><a href="{% url 'student' student.id%}"> + INFO</a></td>
+            <td><a href="{% url 'editar_usuari' student.id %}"> EDITAR</a></td>
+            <td><a href="{% url 'eliminar_usuari' student.id %}"> ELIMINAR</a></td>
         </tr>
         {% endfor %}
     </table>
